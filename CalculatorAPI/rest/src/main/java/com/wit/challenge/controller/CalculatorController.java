@@ -1,6 +1,6 @@
-package com.example.calculatorapi.api.controller;
+package com.wit.challenge.controller;
 
-import com.example.calculatorapi.service.CalculatorService;
+import com.wit.challenge.calculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

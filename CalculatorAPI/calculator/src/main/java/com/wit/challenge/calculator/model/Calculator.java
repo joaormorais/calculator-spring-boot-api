@@ -1,4 +1,4 @@
-package com.example.calculatorapi.api.model;
+package com.wit.challenge.calculator.model;
 
 public class Calculator {
 

@@ -1,6 +1,6 @@
-package com.example.calculatorapi.service;
+package com.wit.challenge.calculator.service;
 
-import com.example.calculatorapi.api.model.Calculator;
+import com.wit.challenge.calculator.model.Calculator;
 import org.springframework.stereotype.Service;
 
 @Service

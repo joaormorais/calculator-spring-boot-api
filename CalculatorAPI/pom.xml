@@ -8,9 +8,10 @@
         <version>3.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>com.wit.challenge</groupId>
     <artifactId>CalculatorAPI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>CalculatorAPI</name>
     <description>CalculatorAPI</description>
     <url/>
@@ -20,6 +21,10 @@
     <developers>
         <developer/>
     </developers>
+    <modules>
+        <module>calculator</module>
+        <module>rest</module>
+    </modules>
     <scm>
         <connection/>
         <developerConnection/>

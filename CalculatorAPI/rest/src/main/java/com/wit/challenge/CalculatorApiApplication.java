@@ -1,4 +1,4 @@
-package com.example.calculatorapi;
+package com.wit.challenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
