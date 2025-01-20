@@ -1,0 +1,7 @@
+server:
+  port: 9090
+
+topics:
+  calculator:
+    request:
+      topic: "calculator.request.topic.v1"
