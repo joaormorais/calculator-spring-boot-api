@@ -24,6 +24,7 @@
     <modules>
         <module>calculator</module>
         <module>rest</module>
+        <module>common</module>
     </modules>
     <scm>
         <connection/>
