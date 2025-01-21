@@ -1,5 +1,6 @@
 package com.wit.challenge.calculator.kafka.consumer;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wit.challenge.CalcRequest;
 import com.wit.challenge.calculator.kafka.producer.CalculatorProducerConfig;
@@ -25,7 +26,12 @@ public class CalculatorConsumerConfig {
 
     @KafkaListener(topics = "calculator.request", groupId = "com.wit.challenge")
     public void consume(String message) {
-        CalcRequest request = objectMapper.convertValue(message, CalcRequest.class);
+        CalcRequest request;
+        try {
+            request = objectMapper.readValue(message, CalcRequest.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
 
         switch (request.getOperation()) {
             case "sum":

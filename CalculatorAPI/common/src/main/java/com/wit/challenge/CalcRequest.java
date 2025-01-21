@@ -1,11 +1,22 @@
 package com.wit.challenge;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CalcRequest {
 
+    @JsonProperty("id")
     private final String id;
+
+    @JsonProperty("operation")
     private final String operation;
+
+    @JsonProperty("a")
     private final float a;
+
+    @JsonProperty("b")
     private final float b;
+
+    @JsonProperty("result")
     private float result;
 
     public CalcRequest(String id, String operation, float a, float b) {

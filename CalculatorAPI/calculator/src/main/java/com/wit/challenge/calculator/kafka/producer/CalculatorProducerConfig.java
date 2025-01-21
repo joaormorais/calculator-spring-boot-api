@@ -1,5 +1,6 @@
 package com.wit.challenge.calculator.kafka.producer;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wit.challenge.CalcRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,12 @@ public class CalculatorProducerConfig {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(CalcRequest calcRequest) {
-        String orderAsMessage = objectMapper.convertValue(calcRequest, String.class);
+        String orderAsMessage;
+        try {
+            orderAsMessage = objectMapper.writeValueAsString(calcRequest);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
         kafkaTemplate.send(calculatorAnswerTopic, orderAsMessage);
     }
 }

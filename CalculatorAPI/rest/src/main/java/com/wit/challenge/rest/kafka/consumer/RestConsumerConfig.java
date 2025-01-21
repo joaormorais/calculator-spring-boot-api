@@ -1,5 +1,6 @@
 package com.wit.challenge.rest.kafka.consumer;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wit.challenge.CalcRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,12 @@ public class RestConsumerConfig {
 
     @KafkaListener(topics = "calculator.answer", groupId = "com.wit.challenge")
     public void consume(String message) {
-        CalcRequest answer = objectMapper.convertValue(message, CalcRequest.class);
+        CalcRequest answer;
+        try {
+            answer = objectMapper.readValue(message, CalcRequest.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
         answersMap.put(answer.getId(), answer);
     }
 
