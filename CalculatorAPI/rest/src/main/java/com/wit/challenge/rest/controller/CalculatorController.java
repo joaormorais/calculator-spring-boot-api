@@ -98,6 +98,10 @@ public class CalculatorController {
         CalcRequest request = new CalcRequest(UUID.randomUUID().toString(),"div",a,b);
         restProducerConfig.sendMessage(request);
 
+        //TODO: criar um timeout de 5 segundos
+        // tempo atual
+        // subtrai ao tempo dentro do ciclo
+        // break quando superior a 5
         CalcRequest answer = null;
         boolean isAnswerFound = false;
         while(!isAnswerFound){

@@ -23,7 +23,7 @@ public class CalculatorConsumerConfig {
         this.calculatorProducerConfig = calculatorProducerConfig;
     }
 
-    @KafkaListener(topics = "topics.calculator.request", groupId = "com.wit.challenge")
+    @KafkaListener(topics = "calculator.request", groupId = "com.wit.challenge")
     public void consume(String message) {
         CalcRequest request = objectMapper.convertValue(message, CalcRequest.class);
 

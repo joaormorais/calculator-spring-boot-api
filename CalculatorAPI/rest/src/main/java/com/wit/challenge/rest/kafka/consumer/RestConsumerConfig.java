@@ -19,7 +19,7 @@ public class RestConsumerConfig {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @KafkaListener(topics = "topics.calculator.answer", groupId = "com.wit.challenge")
+    @KafkaListener(topics = "calculator.answer", groupId = "com.wit.challenge")
     public void consume(String message) {
         CalcRequest answer = objectMapper.convertValue(message, CalcRequest.class);
         answersMap.put(answer.getId(), answer);

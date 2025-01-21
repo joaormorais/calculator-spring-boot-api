@@ -1,5 +1,5 @@
 package com.wit.challenge.rest.kafka.producer;
-;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wit.challenge.CalcRequest;
