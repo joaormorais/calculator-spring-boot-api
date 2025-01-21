@@ -1,4 +1,4 @@
-package com.wit.challenge;
+package com.wit.challenge.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,12 +1,12 @@
-package com.wit.challenge.config;
+package com.wit.challenge.calculator.kafka.config;
 
-import org.apache.kafka.clients.admin.NewTopic;
+import com.wit.challenge.calculator.kafka.consumer.CalculatorConsumerConfig;
+import com.wit.challenge.calculator.kafka.producer.CalculatorProducerConfig;
+import com.wit.challenge.calculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
@@ -14,13 +14,10 @@ import org.springframework.kafka.core.ProducerFactory;
 import java.util.Map;
 
 @Configuration
-public class KafkaProducerConfig {
+public class CalculatorKafkaConfiguration {
 
     @Autowired
     private KafkaProperties kafkaProperties;
-
-    @Value("${topics.calculator.request.topic}")
-    private String calculatorRequestTopic;
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
@@ -35,12 +32,13 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public NewTopic calculatorRequestTopicBuilder() {
-        return TopicBuilder
-                .name(calculatorRequestTopic)
-                .partitions(1)
-                .replicas(1)
-                .build();
+    public CalculatorProducerConfig CreateCalculatorProducerConfig() {
+        return new CalculatorProducerConfig();
+    }
+
+    @Bean
+    public CalculatorConsumerConfig CreateCalculatorConsumerConfig(CalculatorService calculatorService, CalculatorProducerConfig calculatorProducerConfig) {
+        return new CalculatorConsumerConfig(calculatorService, calculatorProducerConfig);
     }
 
 }
