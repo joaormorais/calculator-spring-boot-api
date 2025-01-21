@@ -26,14 +26,20 @@ public class CalculatorController {
 
     @GetMapping("/sum")
     public float sum(@RequestParam float a, @RequestParam float b) {
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(),"sum",a,b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "sum", a, b);
         restProducerConfig.sendMessage(request);
 
+        long start = System.currentTimeMillis();
+        long end = start + 2 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
-        while(!isAnswerFound){
-            for(String id: restConsumerConfig.getAnswersIds())
-                if(id.equals(request.getId())){
+
+        while (!isAnswerFound) {
+            if (System.currentTimeMillis() > end)
+                break;
+
+            for (String id : restConsumerConfig.getAnswersIds())
+                if (id.equals(request.getId())) {
                     isAnswerFound = true;
                     answer = restConsumerConfig.getAnswer(id);
                 }
@@ -44,19 +50,25 @@ public class CalculatorController {
             }
         }
 
-        return answer.getResult();
+        return answer == null ? Float.NaN : answer.getResult();
     }
 
     @GetMapping("/sub")
     public float sub(@RequestParam float a, @RequestParam float b) {
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(),"sub",a,b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "sub", a, b);
         restProducerConfig.sendMessage(request);
 
+        long start = System.currentTimeMillis();
+        long end = start + 6 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
-        while(!isAnswerFound){
-            for(String id: restConsumerConfig.getAnswersIds())
-                if(id.equals(request.getId())){
+
+        while (!isAnswerFound) {
+            if (System.currentTimeMillis() > end)
+                break;
+
+            for (String id : restConsumerConfig.getAnswersIds())
+                if (id.equals(request.getId())) {
                     isAnswerFound = true;
                     answer = restConsumerConfig.getAnswer(id);
                 }
@@ -67,19 +79,25 @@ public class CalculatorController {
             }
         }
 
-        return answer.getResult();
+        return answer == null ? Float.NaN : answer.getResult();
     }
 
     @GetMapping("/mul")
     public float mul(@RequestParam float a, @RequestParam float b) {
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(),"mul",a,b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "mul", a, b);
         restProducerConfig.sendMessage(request);
 
+        long start = System.currentTimeMillis();
+        long end = start + 6 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
-        while(!isAnswerFound){
-            for(String id: restConsumerConfig.getAnswersIds())
-                if(id.equals(request.getId())){
+
+        while (!isAnswerFound) {
+            if (System.currentTimeMillis() > end)
+                break;
+
+            for (String id : restConsumerConfig.getAnswersIds())
+                if (id.equals(request.getId())) {
                     isAnswerFound = true;
                     answer = restConsumerConfig.getAnswer(id);
                 }
@@ -90,23 +108,25 @@ public class CalculatorController {
             }
         }
 
-        return answer.getResult();
+        return answer == null ? Float.NaN : answer.getResult();
     }
 
     @GetMapping("/div")
     public float div(@RequestParam float a, @RequestParam float b) {
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(),"div",a,b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "div", a, b);
         restProducerConfig.sendMessage(request);
 
-        //TODO: criar um timeout de 5 segundos
-        // tempo atual
-        // subtrai ao tempo dentro do ciclo
-        // break quando superior a 5
+        long start = System.currentTimeMillis();
+        long end = start + 6 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
-        while(!isAnswerFound){
-            for(String id: restConsumerConfig.getAnswersIds())
-                if(id.equals(request.getId())){
+
+        while (!isAnswerFound) {
+            if (System.currentTimeMillis() > end)
+                break;
+
+            for (String id : restConsumerConfig.getAnswersIds())
+                if (id.equals(request.getId())) {
                     isAnswerFound = true;
                     answer = restConsumerConfig.getAnswer(id);
                 }
@@ -117,7 +137,7 @@ public class CalculatorController {
             }
         }
 
-        return answer.getResult();
+        return answer == null ? Float.NaN : answer.getResult();
     }
 
 }
