@@ -26,7 +26,7 @@ public class CalculatorControllerTest {
     RestConsumerConfig restConsumerConfig;
 
     @Test
-    public void sumEndpointTest() throws Exception {
+    public void sumEndpointTest() {
         Random rand = new Random();
         float a = rand.nextFloat();
         float b = rand.nextFloat();
@@ -40,7 +40,7 @@ public class CalculatorControllerTest {
     }
 
     @Test
-    public void subEndpointTest() throws Exception {
+    public void subEndpointTest() {
         Random rand = new Random();
         float a = rand.nextFloat();
         float b = rand.nextFloat();
@@ -53,7 +53,7 @@ public class CalculatorControllerTest {
     }
 
     @Test
-    public void multiplyEndpointTest() throws Exception {
+    public void multiplyEndpointTest() {
         Random rand = new Random();
         float a = rand.nextFloat();
         float b = rand.nextFloat();
@@ -66,7 +66,7 @@ public class CalculatorControllerTest {
     }
 
     @Test
-    public void divideEndpointTest() throws Exception {
+    public void divideEndpointTest() {
         Random rand = new Random();
         float a = rand.nextFloat();
         float b = rand.nextFloat();
