@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorService {
 
-    private static Logger logger = LoggerFactory.getLogger(CalculatorService.class);
+    private static final Logger logger = LoggerFactory.getLogger(CalculatorService.class);
     private Calculator calculator;
 
     public CalculatorService() {

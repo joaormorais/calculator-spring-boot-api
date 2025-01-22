@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CalculatorConsumerConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(CalculatorConsumerConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(CalculatorConsumerConfig.class);
     private final CalculatorService calculatorService;
     private final CalculatorProducerConfig calculatorProducerConfig;
 

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorProducerConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(CalculatorProducerConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(CalculatorProducerConfig.class);
 
     @Value("${topics.calculator.answer}")
     private String calculatorAnswerTopic;

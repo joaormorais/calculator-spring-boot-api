@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RestProducerConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(RestProducerConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(RestProducerConfig.class);
 
     @Value("${topics.calculator.request}")
     private String calculatorRequestTopic;

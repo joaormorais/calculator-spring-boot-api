@@ -18,7 +18,7 @@ import java.util.Map;
 @Configuration
 public class RestKafkaConfiguration {
 
-    private static Logger logger = LoggerFactory.getLogger(RestKafkaConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(RestKafkaConfiguration.class);
 
     @Autowired
     private KafkaProperties kafkaProperties;

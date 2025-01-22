@@ -17,7 +17,7 @@ import static java.lang.Thread.sleep;
 @RestController
 public class CalculatorController {
 
-    private static Logger logger = LoggerFactory.getLogger(CalculatorController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CalculatorController.class);
     private final RestProducerConfig restProducerConfig;
     private final RestConsumerConfig restConsumerConfig;
 

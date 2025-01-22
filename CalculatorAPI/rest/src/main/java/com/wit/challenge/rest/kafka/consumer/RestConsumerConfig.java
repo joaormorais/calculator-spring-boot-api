@@ -17,7 +17,7 @@ import java.util.Map;
 @Component
 public class RestConsumerConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(RestConsumerConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(RestConsumerConfig.class);
     private final Map<String, CalcRequest> answersMap = new HashMap<>();
 
     @Autowired
