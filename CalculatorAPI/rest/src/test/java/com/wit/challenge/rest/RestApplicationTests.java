@@ -1,4 +1,4 @@
-package com.wit.challenge;
+package com.wit.challenge.rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
