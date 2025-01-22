@@ -21,3 +21,21 @@ services:
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_LOG_DIRS: /tmp/kraft-combined-logs
       CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+  rest-module:
+    image: rest-module
+    hostname: rest-module
+    container_name: rest-module
+    ports:
+      - 9000:9000
+  calculator-module:
+    image: calculator-module
+    hostname: calculator-module
+    container_name: calculator-module
+    ports:
+      - 9001:9001
+  common-module:
+    image: common-module
+    hostname: common-module
+    container_name: common-module
+    ports:
+      - 9003:9003
