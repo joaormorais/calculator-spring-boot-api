@@ -1,6 +1,8 @@
 package com.wit.challenge.rest.kafka.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
@@ -15,6 +17,8 @@ import java.util.Map;
 
 @Configuration
 public class RestKafkaConfiguration {
+
+    private static Logger logger = LoggerFactory.getLogger(RestKafkaConfiguration.class);
 
     @Autowired
     private KafkaProperties kafkaProperties;
@@ -37,9 +41,10 @@ public class RestKafkaConfiguration {
         return new KafkaTemplate<>(producerFactory());
     }
 
-    // topic: rest writes and calculator reads
+    // topic: rest writes, and calculator reads
     @Bean
     public NewTopic calculatorRequestTopicBuilder() {
+        logger.info("Creating new topic: {}", calculatorRequestTopic);
         return TopicBuilder
                 .name(calculatorRequestTopic)
                 .partitions(1)
@@ -47,9 +52,10 @@ public class RestKafkaConfiguration {
                 .build();
     }
 
-    // topic: calculator writes and rest reads
+    // topic: calculator writes, and rest reads
     @Bean
     public NewTopic calculatorAnswerTopicBuilder() {
+        logger.info("Creating new topic: {}", calculatorAnswerTopic);
         return TopicBuilder
                 .name(calculatorAnswerTopic)
                 .partitions(1)

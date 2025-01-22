@@ -49,4 +49,15 @@ public class CalcRequest {
     public void setResult(float result) {
         this.result = result;
     }
+
+    @Override
+    public String toString() {
+        return "CalcRequest{" +
+                "id='" + id + '\'' +
+                ", operation='" + operation + '\'' +
+                ", a=" + a +
+                ", b=" + b +
+                ", result=" + result +
+                '}';
+    }
 }
