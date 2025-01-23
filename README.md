@@ -53,7 +53,7 @@ Return to the "CalculatorAPI" folder, and start the containers with the modules 
   docker compose -f docker-compose.modules.yml up -d
 ```
 
-Test the application and send a request (sum, sub, mul or div), like:
+Test the application with a request (sum, sub, mul or div), like:
 
 ```bash
   localhost:8080/sum?a=15645&b=2344
