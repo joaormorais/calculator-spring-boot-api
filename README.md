@@ -53,6 +53,12 @@ Return to the "CalculatorAPI" folder, and start the containers with the modules 
   docker compose -f docker-compose.modules.yml up -d
 ```
 
+Test the application and send a request (sum, sub, mul or div), like:
+
+```bash
+  localhost:8080/sum?a=15645&b=2344
+```
+
 **If you want to run the project on IntelliJ, you only need to start the broker. The modules can be started on the IDE.**
 
 ## Tech Stack
