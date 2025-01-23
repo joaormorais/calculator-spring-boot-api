@@ -54,6 +54,7 @@ Return to the "CalculatorAPI" folder, and start the containers with the modules 
 ```
 
 **If you want to run the project on IntelliJ, you only need to start the broker. The modules can be started on the IDE.**
+
 ## Tech Stack
 
 | Layer                   | Technology              |
@@ -62,6 +63,10 @@ Return to the "CalculatorAPI" folder, and start the containers with the modules 
 | Framework               | Spring Boot  |
 | Communication           | Apache Kafka |
 | Containerization        | Docker       |
+
+## Issues
+
+Unit tests need improvement...
 
 ## Authors
 
