@@ -20,6 +20,13 @@ public class CalcRequest {
     @JsonProperty("result")
     private float result;
 
+    public CalcRequest() {
+        this.id = null;
+        this.operation = null;
+        this.a = 0.0f;
+        this.b = 0.0f;
+    }
+
     @JsonCreator
     public CalcRequest(@JsonProperty("id") String id, @JsonProperty("operation") String operation, @JsonProperty("a") float a, @JsonProperty("b") float b) {
         this.id = id;
