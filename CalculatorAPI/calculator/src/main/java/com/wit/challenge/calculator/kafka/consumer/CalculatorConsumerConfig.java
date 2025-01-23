@@ -31,9 +31,8 @@ public class CalculatorConsumerConfig {
 
     @KafkaListener(topics = "calculator.request", groupId = "com.wit.challenge")
     public void consume(String message) {
-        logger.info("Received a message... (topic: calculator.request)");
+        logger.info("Received a message... (topic: calculator.request)\nAbout to convert the message: " + message);
         CalcRequest request;
-        logger.info("About to convert message: " + message);
         try {
             request = objectMapper.readValue(message, CalcRequest.class);
             logger.info("Message received (topic: calculator.request): " + request);

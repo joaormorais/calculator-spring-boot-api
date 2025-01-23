@@ -40,11 +40,14 @@ public class CalculatorController {
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
+        // create a timeout of 2 seconds
         long start = System.currentTimeMillis();
         long end = start + 2 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
 
+        // search on the map with ids (timeout after 2 seconds)
+        // if there is an answer, the map will have the id of that answer
         while (!isAnswerFound) {
             logger.info("Waiting for an answer...");
             if (System.currentTimeMillis() > end)
@@ -75,11 +78,14 @@ public class CalculatorController {
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
+        // create a timeout of 2 seconds
         long start = System.currentTimeMillis();
-        long end = start + 6 * 1000;
+        long end = start + 2 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
 
+        // search on the map with ids (timeout after 2 seconds)
+        // if there is an answer, the map will have the id of that answer
         while (!isAnswerFound) {
             logger.info("Waiting for an answer...");
             if (System.currentTimeMillis() > end)
@@ -109,11 +115,14 @@ public class CalculatorController {
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
+        // create a timeout of 2 seconds
         long start = System.currentTimeMillis();
-        long end = start + 6 * 1000;
+        long end = start + 2 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
 
+        // search on the map with ids (timeout after 2 seconds)
+        // if there is an answer, the map will have the id of that answer
         while (!isAnswerFound) {
             logger.info("Waiting for an answer...");
             if (System.currentTimeMillis() > end)
@@ -143,11 +152,14 @@ public class CalculatorController {
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
+        // create a timeout of 2 seconds
         long start = System.currentTimeMillis();
-        long end = start + 6 * 1000;
+        long end = start + 2 * 1000;
         CalcRequest answer = null;
         boolean isAnswerFound = false;
 
+        // search on the map with ids (timeout after 2 seconds)
+        // if there is an answer, the map will have the id of that answer
         while (!isAnswerFound) {
             logger.info("Waiting for an answer...");
             if (System.currentTimeMillis() > end)
