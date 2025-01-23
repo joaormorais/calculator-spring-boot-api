@@ -33,6 +33,7 @@ public class CalculatorConsumerConfig {
     public void consume(String message) {
         logger.info("Received a message... (topic: calculator.request)");
         CalcRequest request;
+        logger.info("About to convert message: " + message);
         try {
             request = objectMapper.readValue(message, CalcRequest.class);
             logger.info("Message received (topic: calculator.request): " + request);

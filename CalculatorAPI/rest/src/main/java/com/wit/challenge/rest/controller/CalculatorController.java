@@ -36,7 +36,7 @@ public class CalculatorController {
     @GetMapping("/sum")
     public float sum(@RequestParam float a, @RequestParam float b) {
         logger.info("Received a sum request...");
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "sum", a, b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "sum", a, b, 0.0f);
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
@@ -71,7 +71,7 @@ public class CalculatorController {
     @GetMapping("/sub")
     public float sub(@RequestParam float a, @RequestParam float b) {
         logger.info("Received a sub request...");
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "sub", a, b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "sub", a, b, 0.0f);
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
@@ -105,7 +105,7 @@ public class CalculatorController {
     @GetMapping("/mul")
     public float mul(@RequestParam float a, @RequestParam float b) {
         logger.info("Received a mul request...");
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "mul", a, b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "mul", a, b, 0.0f);
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
@@ -139,7 +139,7 @@ public class CalculatorController {
     @GetMapping("/div")
     public float div(@RequestParam float a, @RequestParam float b) {
         logger.info("Received a div request...");
-        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "div", a, b);
+        CalcRequest request = new CalcRequest(UUID.randomUUID().toString(), "div", a, b, 0.0f);
         logger.info("Request received: " + request);
         restProducerConfig.sendMessage(request);
 
