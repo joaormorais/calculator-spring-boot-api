@@ -1,5 +1,6 @@
 package com.wit.challenge;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CalcRequest {
@@ -19,7 +20,8 @@ public class CalcRequest {
     @JsonProperty("result")
     private float result;
 
-    public CalcRequest(String id, String operation, float a, float b) {
+    @JsonCreator
+    public CalcRequest(@JsonProperty("id") String id, @JsonProperty("operation") String operation, @JsonProperty("a") float a, @JsonProperty("b") float b) {
         this.id = id;
         this.operation = operation;
         this.a = a;

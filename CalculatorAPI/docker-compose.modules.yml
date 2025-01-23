@@ -1,0 +1,26 @@
+services:
+  rest-module:
+    image: rest-module
+    hostname: rest-module
+    container_name: rest-module
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    networks:
+      - calculatorapi_default
+  calculator-module:
+    image: calculator-module
+    hostname: calculator-module
+    container_name: calculator-module
+    ports:
+      - 8081:8081
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    networks:
+      - calculatorapi_default
+
+networks:
+  calculatorapi_default:
+    external:
+      name: calculatorapi_default
