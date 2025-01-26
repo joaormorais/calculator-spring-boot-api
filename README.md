@@ -16,7 +16,6 @@ This project is a  RESTful API that provides the basic functionalities of a calc
 
 Prerequisites:
 - Docker
-- Docker Compose
 
 Clone the project:
 
